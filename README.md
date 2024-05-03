@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+In this project, let's build a Money Manager app by applying the concepts we have learned till now.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Refer to the image below:
 
-## Available Scripts
+![image](https://github.com/bukka5sandhya/React-Js-Money-Manager/assets/133884532/1e394740-eda5-49e6-90cf-41aa3e7f0b27)
 
-In the project directory, you can run:
+https://assetas.ccbp.in/frontend/content/react-js/money-manager-output.gif
 
-### `npm start`
+Design Files
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Click to view
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Extra Small (Size < 576px) and Small (Size >= 576px)
 
-### `npm test`
+Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Set Up Instructions
 
-### `npm run build`
+Click to view
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Download dependencies by running npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start up the app using npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Completion Instructions
 
-### `npm run eject`
+Functionality to be added
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app must have the following functionalities
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Initially, Balance Amount, Income Amount, and Expenses Amount should be 0
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Balance Amount should be calculated by removing the Expenses Amount from the Income Amount in the list of transactions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Income Amount should be calculated by removing the Expenses Amount in the list of transactions
 
-## Learn More
+Expenses Amount should be calculated by adding only Expenses Amount in the list of transactions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The MoneyManager component is provided with transactionTypeOptions. It consists of a list of transaction type objects with the following properties in each object
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Key	Data Type
 
-### Code Splitting
+optionId	String
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+displayText	String
 
-### Analyzing the Bundle Size
+Initially, the value of the titleInput should be empty
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Initially, the value of the amountInput should be empty
 
-### Making a Progressive Web App
+Initially, the first option in the list should be selected
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+When a transaction is added, by providing the values in the titleInput, amountInput and optionId and Add button is clicked,
 
-### Advanced Configuration
+A new transaction should be added to the transaction history list
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+totalBalance, totalIncome and totalExpenses should be updated accordingly
 
-### Deployment
+totalBalance = totalIncome - totalExpenses
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+After updating, the values in the titleInput,amountInput and optionId will be updated to their initial values
 
-### `npm run build` fails to minify
+When the delete button in the transaction history is clicked,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The respective transaction should be deleted from the transaction history list
+
+totalBalance, totalIncome and totalExpenses should be updated accordingly
+
+Components Structure
+
+![image](https://github.com/bukka5sandhya/React-Js-Money-Manager/assets/133884532/0777be14-030d-4f2a-93c5-d6754277cb93)
+
+Implementation Files
+
+Use these files to complete the implementation:
+
+src/App.js
+
+src/components/MoneyManager/index.js
+
+src/components/MoneyManager/index.css
+
+src/components/MoneyDetails/index.js
+
+src/components/MoneyDetails/index.css
+
+src/components/TransactionItem/index.js
+
+src/components/TransactionItem/index.css
+Important Note
+
+Click to view
+
+The following instructions are required for the tests to pass
+
+The Balance Amount should have the data-testid as balanceAmount
+
+The Income Amount should have the data-testid as incomeAmount
+
+The Expenses Amount should have the data-testid as expensesAmount
+
+The Delete button for each transaction should have the data-testid as delete
+Resources
+
+Image URLs
+
+https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png
+
+https://assets.ccbp.in/frontend/react-js/money-manager/balance-image.png alt should be balance
+
+https://assets.ccbp.in/frontend/react-js/money-manager/income-image.png alt should be income
+
+https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png alt should be expenses
+
+https://assets.ccbp.in/frontend/react-js/money-manager/delete.png alt should be delete
+
+Colors
+
+Hex: #475569
+
+Hex: #0b69ff
+
+Hex: #ecfccb
+
+Hex: #84cc16
+
+Hex: #cffafe
+
+Hex: #06b6d4
+
+Hex: #ede9fe
+
+Hex: #7c3aed
+
+Hex: #cbd5e1
+
+Hex: #7e858e
+
+Hex: #ffffff
+
+Hex: #1e293b
+
+Hex: #d7dfe9
+
+Hex: #334155
+
+Font-families
+
+Things to Keep in Mind
+
+All components you implement should go in the src/components directory.
+
+Don't change the component folder names as those are the files being imported into the tests.
+
+Do not remove the pre-filled code
+
+Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
